@@ -1,155 +1,180 @@
-/* RESET */
+<?php
+require_once "proteger.php";
+?>
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
 
-body{
-    display:flex;
-    background:#fff8fc;
-}
+<head>
 
-/* SIDEBAR */
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-.sidebar{
-    width:270px;
-    height:100vh;
-    background:linear-gradient(180deg,#ff66b3,#d78bff);
-    color:#fff;
-    position:fixed;
-    left:0;
-    top:0;
-    padding:30px 20px;
-}
+<title>Painel - Amonelu Themes</title>
 
-.logo{
-    font-size:28px;
-    font-weight:bold;
-    text-align:center;
-    margin-bottom:40px;
-}
+<link rel="stylesheet" href="../assets/css/admin.css">
 
-.sidebar ul{
-    list-style:none;
-}
+<link rel="preconnect" href="https://fonts.googleapis.com">
 
-.sidebar ul li{
-    margin:15px 0;
-}
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-.sidebar ul li a{
-    color:#fff;
-    text-decoration:none;
-    display:block;
-    padding:15px;
-    border-radius:15px;
-    transition:.3s;
-}
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
-.sidebar ul li a:hover{
-    background:rgba(255,255,255,.2);
-}
+</head>
 
-.active{
-    background:rgba(255,255,255,.25);
-    border-radius:15px;
-    padding:15px;
-}
+<body>
 
-/* CONTEÚDO */
+<div class="sidebar">
 
-.content{
-    margin-left:290px;
-    width:calc(100% - 290px);
-    padding:40px;
-}
+<div class="logo">
 
-.content header h1{
-    color:#ff4fa3;
-    margin-bottom:30px;
-}
+💖 Amonelu Themes
 
-/* CARDS */
+</div>
 
-.cards{
-    display:grid;
-    grid-template-columns:repeat(4,1fr);
-    gap:20px;
-    margin-bottom:40px;
-}
+<ul>
 
-.card{
-    background:#fff;
-    border-radius:20px;
-    padding:30px;
-    text-align:center;
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-}
+<li class="active">
+<i class="fa-solid fa-house"></i>
+Dashboard
+</li>
 
-.card h2{
-    color:#ff4fa3;
-    font-size:34px;
-}
+<li>
+<a href="temas.php">
+<i class="fa-solid fa-mobile-screen"></i>
+Temas
+</a>
+</li>
 
-.card p{
-    margin-top:10px;
-}
+<li>
+<a href="adicionar-tema.php">
+<i class="fa-solid fa-folder-plus"></i>
+Adicionar Tema
+</a>
+</li>
 
-/* TABELA */
+<li>
+<a href="pedidos.php">
+<i class="fa-solid fa-money-bill-wave"></i>
+Pedidos
+</a>
+</li>
 
-table{
-    width:100%;
-    border-collapse:collapse;
-    background:#fff;
-    border-radius:20px;
-    overflow:hidden;
-    box-shadow:0 10px 25px rgba(0,0,0,.08);
-}
+<li>
+<a href="configuracoes.php">
+<i class="fa-solid fa-gear"></i>
+Configurações
+</a>
+</li>
 
-th{
-    background:#ff4fa3;
-    color:#fff;
-    padding:18px;
-}
+<li>
+<a href="../api/logout.php">
+<i class="fa-solid fa-right-from-bracket"></i>
+Sair
+</a>
+</li>
 
-td{
-    padding:18px;
-    text-align:center;
-    border-bottom:1px solid #eee;
-}
+</ul>
 
-/* RESPONSIVO */
+</div>
 
-@media(max-width:900px){
+<div class="content">
 
-.sidebar{
-    width:100%;
-    height:auto;
-    position:relative;
-}
+<header>
 
-.content{
-    margin-left:0;
-    width:100%;
-}
+<h1>
 
-.cards{
-    grid-template-columns:repeat(2,1fr);
-}
+Olá,
+<?php echo $_SESSION["admin_nome"]; ?> 👋
 
-}
+</h1>
 
-@media(max-width:600px){
+</header>
 
-.cards{
-    grid-template-columns:1fr;
-}
+<div class="cards">
 
-table{
-    font-size:14px;
-}
+<div class="card">
 
-}
+<h2>25</h2>
+
+<p>Temas</p>
+
+</div>
+
+<div class="card">
+
+<h2>18</h2>
+
+<p>Pedidos</p>
+
+</div>
+
+<div class="card">
+
+<h2>R$ 845,70</h2>
+
+<p>Vendas</p>
+
+</div>
+
+<div class="card">
+
+<h2>152</h2>
+
+<p>Downloads</p>
+
+</div>
+
+</div>
+
+<h2>
+
+Últimos Pedidos
+
+</h2>
+
+<table>
+
+<tr>
+
+<th>Cliente</th>
+
+<th>Tema</th>
+
+<th>Status</th>
+
+<th>Valor</th>
+
+</tr>
+
+<tr>
+
+<td>Maria</td>
+
+<td>🐱 Gatinho Rosa</td>
+
+<td>🟢 Pago</td>
+
+<td>R$ 7,90</td>
+
+</tr>
+
+<tr>
+
+<td>Ana</td>
+
+<td>🐶 Puppy Love</td>
+
+<td>🟡 Aguardando</td>
+
+<td>R$ 8,90</td>
+
+</tr>
+
+</table>
+
+</div>
+
+</body>
+
+</html>
